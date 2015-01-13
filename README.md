@@ -2,6 +2,7 @@
 
 The goal of this repository is just to test Xcode server and provides some receipts for the following usecases :
 - [x] [Cocoapods](#cocoapods)
+- [x] [Runing tests](#tests)
 - [x] KIF
 - [x] build a specific branch
 - [ ] get results as variables after a build
@@ -13,12 +14,15 @@ The goal of this repository is just to test Xcode server and provides some recei
 
 ## Global tricks
 
-start by cleaning you scheme scheme: only one target in the test section of each scheme
+When creating a bot, you need to **be in the exact configuration** you want to build on you Xcode Server (same branch, same scheme,...)
 
-if you are using a workspace move scheme to workspace instead of project
-create bot from workspace
+Make sure the schemes you want to build are shared.
 
-if issues (don't run tests, don't find libs, don't build pods...) delete and re-create the bot.
+If you are using a workspace move scheme to workspace instead of project and create your bots from workspace. (ie: do you Cocoapods setup first)
+
+![Scheme](Images/schemes.png)
+
+If issues (don't run tests, don't find libs, don't build pods...) delete the bot, check your workspace configuration and re-create the bot.
 
 ## Cocoapods <a id="cocoapods"></a>
 
@@ -38,3 +42,9 @@ pod install
 ```
 
 note: the `pod setup` will be run only the first time as the `_xcsbuildd` user.
+
+## Runing tests <a id="tests"></a>
+
+Clean your scheme: only one target in the test section for each scheme.
+
+![Test Target](Images/scheme-test.png)
