@@ -4,7 +4,7 @@ The goal of this repository is just to test Xcode server and provides some recei
 - [x] [Cocoapods](#cocoapods)
 - [x] [Runing tests](#tests)
 - [x] [KIF](#kif)
-- [x] build a specific branch
+- [x] [build a specific branch](#git-branch)
 - [ ] get results as variables after a build
 - [ ] post notification on Slack
 - [ ] build pull request almost automaticaly
@@ -56,3 +56,11 @@ The best way to install/use KIF is probably to set it up with Cocoapods.
 
 TODO: find a way to restart the build if it's fail.
 
+## Build a specific branch <a id="git-branch"></a>
+
+This is obviously helpfull if you use git branch for different stats of your project (to be tested, releasable stuffs, completed features...)
+First you need to match the local branches with te remote branches.
+Checkout the branch you want to build and create you bot.
+You can check which branch is selected (as Xcode see it) using the "Source Control" menu (May seams obvious if you use Xcode to commit your code).
+
+![Git Branch](Images/git-branch.png)
