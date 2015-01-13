@@ -1,7 +1,7 @@
 # Xcode Server experiments
 
 The goal of this repository is just to test Xcode server and provides some receipts for the following usecases :
-- [x] Cocoapods
+- [x] [Cocoapods](#cocoapods)
 - [x] KIF
 - [x] build a specific branch
 - [ ] get results as variables after a build
@@ -20,7 +20,7 @@ create bot from workspace
 
 if issues (don't run tests, don't find libs, don't build pods...) delete and re-create the bot.
 
-## Cocoapods
+## Cocoapods ## {#cocoapods}
 
 use this before build trigger:
 
