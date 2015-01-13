@@ -5,10 +5,10 @@ The goal of this repository is just to test Xcode server and provides some recei
 - [x] [Runing tests](#tests)
 - [x] [KIF](#kif)
 - [x] [build a specific branch](#git-branch)
-- [ ] get results as variables after a build
+- [x] [get results as variables after a build](#result-variables)
 - [ ] post notification on Slack
 - [ ] build pull request almost automaticaly
-- [ ] upload to testflight/itunes connect/hockey app automaticaly
+- [ ] [deploy to testflight/itunes connect/hockey app automaticaly](#testflight)
 - [ ] trigger build manually from an other system (backend deployment for instance)
 - [ ] provide build status/badges
 
@@ -69,3 +69,84 @@ You can check which branch is selected (as Xcode see it) using the "Source Contr
 ![Git Branch](Images/git-branch.png)
 
 You can display the current branch while building using `git branch`
+
+## Result Variables <a id="result-variables"></a>
+
+You can display all the environement variable before or after a build using the `set` command.
+
+Here is an example of it's output:
+```
+BUILD RESULT
+Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.7olKoZBGgD/Render
+BASH=/bin/bash
+BASH_ARGC=()
+BASH_ARGV=()
+BASH_LINENO=([0]="0")
+BASH_SOURCE=([0]="/var/folders/65/nc5b0s2s5qd_p1zch8nc44h8000086/T/F636AFD8-B41E-43E6-AF8B-A76FE4C29652-24395-00001AA57C68B4BD")
+BASH_VERSINFO=([0]="3" [1]="2" [2]="53" [3]="1" [4]="release" [5]="x86_64-apple-darwin14")
+BASH_VERSION='3.2.53(1)-release'
+DIRSTACK=()
+EUID=262
+GROUPS=()
+HOME=/var/_xcsbuildd
+HOSTNAME=ThibautsMacBook
+HOSTTYPE=x86_64
+IFS=$' \t\n'
+LOGNAME=_xcsbuildd
+MACHTYPE=x86_64-apple-darwin14
+OPTERR=1
+OPTIND=1
+OSTYPE=darwin14
+PATH=/Applications/Xcode.app/Contents/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin
+PIPESTATUS=([0]="0")
+PPID=24395
+PS4='+ '
+PWD=/Library/Developer/XcodeServer/Integrations/Caches/43b017268c0bed5812627a58641cce7e/Source
+SHELL=/bin/false
+SHELLOPTS=braceexpand:hashall:interactive-comments
+SHLVL=1
+SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.p8UZMaMv1j/Listeners
+TERM=dumb
+TMPDIR=/var/folders/65/nc5b0s2s5qd_p1zch8nc44h8000086/T/
+UID=262
+USER=_xcsbuildd
+XCS=1
+XCS_ANALYZER_WARNING_CHANGE=0
+XCS_ANALYZER_WARNING_COUNT=0
+XCS_BOT_ID=43b017268c0bed5812627a58641cce7e
+XCS_BOT_NAME='Branch: My Awesome Feature'
+XCS_BOT_TINY_ID=F4B9E80
+XCS_ERROR_CHANGE=0
+XCS_ERROR_COUNT=2
+XCS_INTEGRATION_ID=43b017268c0bed5812627a58641fbe7f
+XCS_INTEGRATION_NUMBER=3
+XCS_INTEGRATION_RESULT=build-errors
+XCS_INTEGRATION_TINY_ID=00B279C
+XCS_OUTPUT_DIR=/Library/Developer/XcodeServer/Integrations/Integration-43b017268c0bed5812627a58641fbe7f
+XCS_SOURCE_DIR=/Library/Developer/XcodeServer/Integrations/Caches/43b017268c0bed5812627a58641cce7e/Source
+XCS_TESTS_CHANGE=0
+XCS_TESTS_COUNT=0
+XCS_TEST_FAILURE_CHANGE=0
+XCS_TEST_FAILURE_COUNT=0
+XCS_WARNING_CHANGE=0
+XCS_WARNING_COUNT=0
+XCS_XCODEBUILD_LOG=/Library/Developer/XcodeServer/Integrations/Integration-43b017268c0bed5812627a58641fbe7f/build.log
+XPC_FLAGS=0x0
+XPC_SERVICE_NAME=com.apple.xcsbuildd
+_='BUILD RESULT'
+__CF_USER_TEXT_ENCODING=0x106:0x0:0x0
+```
+
+The `XCS_INTEGRATION_RESULT` variable provide status of the build.
+It takes the following values : 
+- `unknown`: unknown, the build is probaly still in progress
+- `build-errors`: the build has failed
+- `warnings`: the build has succeded with warnings
+- `analyzer-warnings`: static analyzes issues
+- `test-failures`: the tests failed
+- `succeeded`: probably the status you want to check
+
+## deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
+
+WIP
+to check: https://github.com/drewcrawford/CaveJohnson
