@@ -146,6 +146,8 @@ It takes the following values :
 - `test-failures`: the tests failed
 - `succeeded`: probably the status you want to check
 
+See also: [Xcode CI script variables](https://gist.github.com/quellish/f279f7b00c1bfd343468)
+
 ## deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
 
 WIP
