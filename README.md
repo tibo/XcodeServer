@@ -59,8 +59,13 @@ TODO: find a way to restart the build if it's fail.
 ## Build a specific branch <a id="git-branch"></a>
 
 This is obviously helpfull if you use git branch for different stats of your project (to be tested, releasable stuffs, completed features...)
+
 First you need to match the local branches with te remote branches.
+
 Checkout the branch you want to build and create you bot.
+
 You can check which branch is selected (as Xcode see it) using the "Source Control" menu (May seams obvious if you use Xcode to commit your code).
 
 ![Git Branch](Images/git-branch.png)
+
+You can display the current branch while building using `git branch`
