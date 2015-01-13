@@ -47,4 +47,4 @@ note: the `pod setup` will be run only the first time as the `_xcsbuildd` user.
 
 Clean your scheme: only one target in the test section for each scheme.
 
-![Test Target](Images/scheme-test.png)
+![Test Target](Images/scheme-tests.png)
