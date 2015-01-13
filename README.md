@@ -34,8 +34,6 @@ then
     pod setup
 fi
 
-
-
 pod install
 ```
 
