@@ -3,7 +3,7 @@
 The goal of this repository is just to test Xcode server and provides some receipts for the following usecases :
 - [x] [Cocoapods](#cocoapods)
 - [x] [Runing tests](#tests)
-- [x] KIF
+- [x] [KIF](#kif)
 - [x] build a specific branch
 - [ ] get results as variables after a build
 - [ ] post notification on Slack
@@ -48,3 +48,11 @@ note: the `pod setup` will be run only the first time as the `_xcsbuildd` user.
 Clean your scheme: only one target in the test section for each scheme.
 
 ![Test Target](Images/scheme-tests.png)
+
+## KIF (used for integration testing) <a id="kif"></a>
+
+The KIF build is pretty similar to the [CI build](#tests).
+The best way to install/use KIF is probably to set it up with Cocoapods.
+
+TODO: find a way to restart the build if it's fail.
+
