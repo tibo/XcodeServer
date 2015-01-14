@@ -4,13 +4,13 @@ The goal of this repository is just to test Xcode server and provides some recei
 - [x] [Cocoapods](#cocoapods)
 - [x] [Runing tests](#tests)
 - [x] [KIF](#kif)
-- [x] [build a specific branch](#git-branch)
-- [x] [get results as variables after a build](#result-variables)
-- [ ] post notification on Slack
-- [ ] build pull request almost automaticaly
-- [ ] [deploy to testflight/itunes connect/hockey app automaticaly](#testflight)
-- [ ] trigger build manually from an other system (backend deployment for instance)
-- [ ] provide build status/badges
+- [x] [Build a specific branch](#git-branch)
+- [x] [Get results as variables after a build](#result-variables)
+- [ ] [Post notifications on Slack](#slack)
+- [ ] Build pull request automaticaly
+- [ ] [Deploy to testflight/itunes connect/hockey app automaticaly](#testflight)
+- [ ] Trigger build manually from an other system (backend deployment for instance)
+- [ ] Provide build status/badges
 
 ## Global tricks
 
@@ -148,7 +148,25 @@ It takes the following values :
 
 See also: [Xcode CI script variables](https://gist.github.com/quellish/f279f7b00c1bfd343468)
 
-## deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
+## Post notifications on Slack <a id="slack"></a>
+
+Just create a post build trigger and post it as a incoming Slack webhook using curl.
+
+```
+PAYLOAD="{\"channel\": \"#general\", \"username\": \"XcodeServer\", \"text\": \"${XCS_BOT_NAME} failed with status: ${XCS_INTEGRATION_RESULT}\", \"icon_emoji\": \":ghost:\"}"
+echo $PAYLOAD
+curl -X POST --data-urlencode "payload=${PAYLOAD}" https://hooks.slack.com/services/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
+```
+
+![Slack Notification](Images/slack.png)
+
+You can either check the value of `$XCS_INTEGRATION_RESULT` yourself or use the options of the trigger step:
+
+![Script Options](Images/script-options.png)
+
+You should be able to do something similar with Hipchat or others.
+
+## Deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
 
 WIP
 to check: https://github.com/drewcrawford/CaveJohnson
