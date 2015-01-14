@@ -6,11 +6,11 @@ The goal of this repository is just to test Xcode server and provides some recei
 - [x] [KIF](#kif)
 - [x] [Build a specific branch](#git-branch)
 - [x] [Get results as variables after a build](#result-variables)
-- [ ] [Post notifications on Slack](#slack)
-- [ ] Build pull request automaticaly
+- [x] [Post notifications on Slack](#slack)
+- [ ] [Build pull request automaticaly](#pull-request)
 - [ ] [Deploy to testflight/itunes connect/hockey app automaticaly](#testflight)
-- [ ] Trigger build manually from an other system (backend deployment for instance)
-- [ ] Provide build status/badges
+- [ ] [Trigger build manually from an other system (backend deployment for instance)](#manual-trigger)
+- [ ] [Provide build status/badges](#status)
 
 ## Global tricks
 
@@ -166,7 +166,22 @@ You can either check the value of `$XCS_INTEGRATION_RESULT` yourself or use the 
 
 You should be able to do something similar with Hipchat or others.
 
+## Build pull request automaticaly <a id="pull-request"></a>
+
+WIP
+
+to check: https://github.com/modcloth-labs/github-xcode-bot-builder
+
 ## Deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
 
 WIP
+
 to check: https://github.com/drewcrawford/CaveJohnson
+
+## Trigger build manually from an other system <a id="manual-trigger"></a>
+
+TODO
+
+## Provide build status/badges <a id="status"></a>
+
+TODO
