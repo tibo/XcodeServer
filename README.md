@@ -176,7 +176,9 @@ to check: https://github.com/modcloth-labs/github-xcode-bot-builder
 
 WIP
 
-to check: https://github.com/drewcrawford/CaveJohnson
+to check: 
+- https://github.com/drewcrawford/CaveJohnson
+- https://github.com/KrauseFx/deliver
 
 ## Trigger build manually from an other system <a id="manual-trigger"></a>
 
