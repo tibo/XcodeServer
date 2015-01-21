@@ -166,11 +166,20 @@ You can either check the value of `$XCS_INTEGRATION_RESULT` yourself or use the 
 
 You should be able to do something similar with Hipchat or others.
 
+
 ## Build pull request automaticaly <a id="pull-request"></a>
 
-WIP
+[xcode-bot-builder](https://github.com/modcloth-labs/github-xcode-bot-builder) doesn't support Xcode 6/Xcode Server 2.0 (Yosemite) for now.
 
-to check: https://github.com/modcloth-labs/github-xcode-bot-builder
+Also I don't know how far we can configure the bot that will be created by this tool.
+
+Keeping a eye on this https://github.com/modcloth-labs/github-xcode-bot-builder/issues/10
+
+List all pull requests of a Github repository: https://api.github.com/repos/AFNetworking/AFNetworking/pulls + authorization if private repository
+
+No official way to script the creation of a new bot.
+The "API" xcode-bot-builder was using with Xcode Server 1.0 doesn't seems to be available on Yosemite.
+
 
 ## Deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
 
