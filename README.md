@@ -8,7 +8,7 @@ The goal of this repository is just to test Xcode server and provides some recei
 - [x] [Get results as variables after a build](#result-variables)
 - [x] [Post notifications on Slack](#slack)
 - [ ] [Build pull request automaticaly](#pull-request)
-- [ ] [Deploy to testflight/itunes connect/hockey app automaticaly](#testflight)
+- [ ] [Deploy to testflight](#testflight)
 - [ ] [Trigger build manually from an other system (backend deployment for instance)](#manual-trigger)
 - [ ] [Provide build status/badges](#status)
 
@@ -181,11 +181,43 @@ No official way to script the creation of a new bot.
 The "API" xcode-bot-builder was using with Xcode Server 1.0 doesn't seems to be available on Yosemite.
 
 
-## Deploy to testflight/itunes connect/hockey app automaticaly <a id="testflight"></a>
+## Deploy to _the new_ testflight <a id="testflight"></a>
+ 
+First of you need to build the IPA and sign it with your App Store identity. An archive action (in Xcode or using xcodebuild) with the right configuration should do the job.
 
-WIP
+Than you need to create the package for `Application Loader` -> create a folder (bundle) with `itmsp` as extension (package.itmsp for instance), put your IPA in this bundle/folder and create a `metadata.xml` file (still in the bundle) with the following template:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<package version="software5.2" xmlns="http://apple.com/itunes/importer">
+    <software_assets apple_id="{{YOUR_APP_ID}}"
+        bundle_short_version_string="{{YOUR_MARKETING_VERSION}}"
+        bundle_version="{{YOUR_BUILD_VERSION}}"
+        bundle_identifier="{{YOUR_BUNDLE_ID}}">
+        <asset type="bundle">
+            <data_file>
+                <file_name>{{YOUR_IPA_FILE.ipa}}</file_name>
+                <checksum type="md5">{{MD5_OF_THE_IPA}}</checksum>
+                <size>{{SIZE_OF_THE_IPA}}</size>
+            </data_file>
+        </asset>
+    </software_assets>
+</package>
+```
 
-to check: 
+take care to set :
+- the apple_id of your app (App Store/iTunes connect id)
+- the short bundle version of the app
+- the build number of the build
+- the bundle identifier of your app
+- the name of your IPA file
+- the MD5 hash of the IPA file (use the `md5` command from the terminal)
+- the size of the IPA file in byte
+
+Your should also be able to set some release notes in the manifest file (must dig in the manifest spec).
+
+Still looking for a way to "enable" the build for Prerelease automaticaly.
+
+related linsk: 
 - https://github.com/drewcrawford/CaveJohnson
 - https://github.com/KrauseFx/deliver
 - http://fastlane.tools/
