@@ -221,6 +221,7 @@ related linsk:
 - https://github.com/drewcrawford/CaveJohnson
 - https://github.com/KrauseFx/deliver
 - http://fastlane.tools/
+- http://bou.io/UploadingScreenshotsWithITMSTransporter.html
 
 ## Trigger build manually from an other system <a id="manual-trigger"></a>
 
