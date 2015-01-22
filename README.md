@@ -224,8 +224,10 @@ related linsk:
 
 ## Trigger build manually from an other system <a id="manual-trigger"></a>
 
-TODO
+Doesn't seams possible for now.
 
 ## Provide build status/badges <a id="status"></a>
 
-TODO
+Not really possible with Xcode Server itself.
+
+Maybe we should use the [Github status](https://developer.github.com/v3/repos/statuses/) from a post build script step.
