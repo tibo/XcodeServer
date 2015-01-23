@@ -24,6 +24,12 @@ If you are using a workspace move scheme to workspace instead of project and cre
 
 If issues (don't run tests, don't find libs, don't build pods...) delete the bot, check your workspace configuration and re-create the bot.
 
+Other tips: check if the app is runing as a Testflight build:
+```
+[[[[NSBundle mainBundle] appStoreReceiptURL] lastPathComponent] isEqualToString:@"sandboxReceipt"]
+```
+(credit [Paul Haddad](https://twitter.com/tapbot_paul/status/557551769496997888)))
+
 ## Cocoapods <a id="cocoapods"></a>
 
 use this before build trigger:
