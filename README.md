@@ -18,13 +18,13 @@ When creating a bot, you need to **be in the exact configuration** you want to b
 
 Make sure the schemes you want to build are shared.
 
-If you are using a workspace move scheme to workspace instead of project and create your bots from workspace. (ie: do you Cocoapods setup first)
+If you are using a workspace move scheme to workspace instead of project and create your bots from workspace. (ie: do your Cocoapods setup first)
 
 ![Scheme](Images/schemes.png)
 
-If issues (don't run tests, don't find libs, don't build pods...) delete the bot, check your workspace configuration and re-create the bot.
+If there are issues (don't run tests, don't find libs, don't build pods...) delete the bot, check your workspace configuration and re-create the bot.
 
-Other tips: check if the app is runing as a Testflight build:
+Other tips: check if the app is running as a Testflight build:
 ```
 [[[[NSBundle mainBundle] appStoreReceiptURL] lastPathComponent] isEqualToString:@"sandboxReceipt"]
 ```
@@ -60,15 +60,15 @@ Clean your scheme: only one target in the test section for each scheme.
 The KIF build is pretty similar to the [CI build](#tests).
 The best way to install/use KIF is probably to set it up with Cocoapods.
 
-TODO: find a way to restart the build if it's fail.
+TODO: find a way to restart the build if it failed.
 
 ## Build a specific branch <a id="git-branch"></a>
 
-This is obviously helpfull if you use git branch for different stats of your project (to be tested, releasable stuffs, completed features...)
+This is obviously helpful if you use git branch for different stats of your project (to be tested, releasable stuffs, completed features...)
 
-First you need to match the local branches with te remote branches.
+First you need to match the local branches with the remote branches.
 
-Checkout the branch you want to build and create you bot.
+Checkout the branch you want to build and create your bot.
 
 You can check which branch is selected (as Xcode see it) using the "Source Control" menu (May seams obvious if you use Xcode to commit your code).
 
@@ -78,7 +78,7 @@ You can display the current branch while building using `git branch`
 
 ## Result Variables <a id="result-variables"></a>
 
-You can display all the environement variable before or after a build using the `set` command.
+You can display all the environement variables before or after a build using the `set` command.
 
 Here is an example of it's output:
 ```
@@ -231,7 +231,7 @@ related linsk:
 
 ## Trigger build manually from an other system <a id="manual-trigger"></a>
 
-Doesn't seams possible for now.
+Doesn't seem possible for now.
 
 ## Provide build status/badges <a id="status"></a>
 
