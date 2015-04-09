@@ -1,8 +1,8 @@
 # Xcode Server experiments
 
-The goal of this repository is just to test Xcode server and provides some receipts for the following usecases :
+The goal of this repository is just to test Xcode server and provides some receipts for the following use cases :
 - [x] [Cocoapods](#cocoapods)
-- [x] [Runing tests](#tests)
+- [x] [Running tests](#tests)
 - [x] [KIF](#kif)
 - [x] [Build a specific branch](#git-branch)
 - [x] [Get results as variables after a build](#result-variables)
@@ -24,7 +24,7 @@ If you are using a workspace move scheme to workspace instead of project and cre
 
 If issues (don't run tests, don't find libs, don't build pods...) delete the bot, check your workspace configuration and re-create the bot.
 
-Other tips: check if the app is runing as a Testflight build:
+Other tips: check if the app is running as a Testflight build:
 ```
 [[[[NSBundle mainBundle] appStoreReceiptURL] lastPathComponent] isEqualToString:@"sandboxReceipt"]
 ```
@@ -181,7 +181,7 @@ Also I don't know how far we can configure the bot that will be created by this 
 
 Keeping a eye on this https://github.com/modcloth-labs/github-xcode-bot-builder/issues/10
 
-List all pull requests of a Github repository: https://api.github.com/repos/AFNetworking/AFNetworking/pulls + authorization if private repository
+List all pull requests of a GitHub repository: https://api.github.com/repos/AFNetworking/AFNetworking/pulls + authorization if private repository
 
 No official way to script the creation of a new bot.
 The "API" xcode-bot-builder was using with Xcode Server 1.0 doesn't seems to be available on Yosemite.
@@ -221,7 +221,7 @@ take care to set :
 
 Your should also be able to set some release notes in the manifest file (must dig in the manifest spec).
 
-Still looking for a way to "enable" the build for Prerelease automaticaly.
+Still looking for a way to "enable" the build for Prerelease automatically.
 
 related linsk: 
 - https://github.com/drewcrawford/CaveJohnson
@@ -237,4 +237,4 @@ Doesn't seams possible for now.
 
 Not really possible with Xcode Server itself.
 
-Maybe we should use the [Github status](https://developer.github.com/v3/repos/statuses/) from a post build script step.
+Maybe we should use the [GitHub status](https://developer.github.com/v3/repos/statuses/) from a post build script step.
