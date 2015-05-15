@@ -9,7 +9,7 @@ The goal of this repository is just to test Xcode server and provides some recei
 - [x] [Post notifications on Slack](#slack)
 - [ ] [Build pull request automaticaly](#pull-request)
 - [ ] [Deploy to testflight](#testflight)
-- [ ] [Trigger build manually from an other system (backend deployment for instance)](#manual-trigger)
+- [x] [Trigger build manually from an other system (backend deployment for instance)](#manual-trigger)
 - [ ] [Provide build status/badges](#status)
 
 ## Global tricks
@@ -231,7 +231,8 @@ related linsk:
 
 ## Trigger build manually from an other system <a id="manual-trigger"></a>
 
-Doesn't seams possible for now.
+Manually trigger a new integration by POSTing with Basic/digest Authentication to:
+https://{xcodeserver}/xcode/api/bots/{botid}/integrations
 
 ## Provide build status/badges <a id="status"></a>
 
