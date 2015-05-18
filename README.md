@@ -173,7 +173,9 @@ You can either check the value of `$XCS_INTEGRATION_RESULT` yourself or use the 
 You should be able to do something similar with Hipchat or others.
 
 
-## Build pull request automaticaly <a id="pull-request"></a>
+## Build pull request automatically <a id="pull-request"></a>
+
+[Buildasaur](https://github.com/czechboy0/Buildasaur) Supports the latest versions of Xcode
 
 [xcode-bot-builder](https://github.com/modcloth-labs/github-xcode-bot-builder) doesn't support Xcode 6/Xcode Server 2.0 (Yosemite) for now.
 
@@ -188,6 +190,8 @@ The "API" xcode-bot-builder was using with Xcode Server 1.0 doesn't seems to be 
 
 
 ## Deploy to _the new_ testflight <a id="testflight"></a>
+ 
+[Fastlane](fastlane.tools) is a great resource for deploying test builds or even store builds from the commandline
  
 First of you need to build the IPA and sign it with your App Store identity. An archive action (in Xcode or using xcodebuild) with the right configuration should do the job.
 
@@ -231,10 +235,10 @@ related linsk:
 
 ## Trigger build manually from an other system <a id="manual-trigger"></a>
 
-Doesn't seams possible for now.
+I now possible thanks to [czechboy0](https://github.com/czechboy0) and [this article](http://honzadvorsky.com/blog/2015/5/4/under-the-hood-of-xcode-server) that exposes xcode servers API
 
 ## Provide build status/badges <a id="status"></a>
 
-Not really possible with Xcode Server itself.
+Using Xcodes API you can now get build status by making an API call.  [See this](http://honzadvorsky.com/blog/2015/5/4/under-the-hood-of-xcode-server) for more info
 
 Maybe we should use the [Github status](https://developer.github.com/v3/repos/statuses/) from a post build script step.
